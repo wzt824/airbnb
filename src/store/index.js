@@ -12,7 +12,8 @@ const store = configureStore({
     entireTwo: entireTwoReducer,
     detail: detailReducer,
     main: mainReducer
-  }
+  },
+  devTools: process.env.NODE_ENV !== 'production', // 在生产环境中禁用Redux DevTools
 })
 
 export default store
