@@ -1,6 +1,7 @@
 import React from "react"
 import { Navigate } from 'react-router-dom'
 import Home from "@/views/home"
+import Demo from "@/views/demo"
 // 路由懒加载
 const Detail = React.lazy(() => import("@/views/detail"))
 const Entire = React.lazy(() => import("@/views/entire"))
@@ -22,6 +23,10 @@ const routes = [
   {
     path: '/entire',
     element: <Entire/>
+  },
+  {
+    path: '/demo',
+    element: <Demo/>
   },
   {
     path: '*',

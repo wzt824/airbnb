@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const ItemWrapper = styled.div`
-  width: 25%;
+  width: ${props => props.itemWidth};
   padding: 8px;
   margin: 8px 0;
   color: ${props => props.theme.text.primaryColor};
   cursor: pointer;
+  flex-shrink: 0;
 
   .inner {
     width: 100%;
@@ -22,6 +23,72 @@ export const ItemWrapper = styled.div`
         top: 0;
         width: 100%;
         height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    .slider {
+      position: relative;
+      cursor: pointer;
+      > .control {
+        color: #fff;
+        position: absolute;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        display: none;
+        justify-content: space-between;
+
+        > .btn {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 50px;
+          height: 100%;
+          background: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+
+          &.right {
+            background: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.25) 100%);
+          }
+        }
+      }
+
+      &:hover {
+        > .control {
+          display: flex;
+        }
+      }
+    }
+
+    .indicator {
+      width: 100px;
+      position: absolute;
+      z-index: 9;
+      bottom: 10px;
+      right: 0;
+      left: 0;
+      margin: auto;
+
+      .dot-item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 14.29%;
+
+        .dot {
+          width: 6px;
+          height: 6px;
+          background-color: #fff;
+          border-radius: 50%;
+
+          &.active {
+            width: 8px;
+            height: 8px;
+            background-color: #cd5757;
+          }
+        }
       }
     }
 

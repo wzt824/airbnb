@@ -1,13 +1,14 @@
 import styled from "styled-components";
 
 export const HeaderWrapper = styled.div`
+  margin-top: 30px;
   color: ${props => props.theme.text.secondaryColor};
 
   .section-header {
     display: flex;
     align-items: center;
 
-    .content {
+    > .content {
       cursor: pointer;
 
       > .title {
@@ -20,6 +21,10 @@ export const HeaderWrapper = styled.div`
         font-size: 16px;
         margin-bottom: 20px;
       }
+
+      &:hover + .arrow-left {
+        display: block;
+      }
     }
   
     .arrow-left {
@@ -30,12 +35,6 @@ export const HeaderWrapper = styled.div`
       background: #fff url(${require('@/assets/img/arrow-right.svg').default});
       display: none;
       cursor: pointer;
-    }
-
-    &:hover {
-      .arrow-left {
-        display: block;
-      }
     }
   }
 `

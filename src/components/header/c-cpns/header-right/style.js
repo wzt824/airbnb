@@ -18,6 +18,7 @@ export const RightWrapper = styled.div`
       cursor: pointer;
       border-radius: 22px;
       box-sizing: content-box;
+      color: ${props => props.theme.isAlpha ? '#fff' : props.theme.text.primaryColor};
 
       &:hover {
         background-color: #f5f5f5;

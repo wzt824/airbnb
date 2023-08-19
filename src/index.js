@@ -1,4 +1,4 @@
-import React, { Suspense } from 'react'
+import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { Provider } from 'react-redux'
@@ -12,15 +12,13 @@ import theme from '@/assets/theme'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Suspense fallback={<div>loading...</div>}>
+  <Provider store={store}>
     <BrowserRouter>
       <ThemeProvider theme={theme}>
-        <Provider store={store}>
           <App />
-        </Provider>
       </ThemeProvider>
     </BrowserRouter>
-  </Suspense>
+  </Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function
